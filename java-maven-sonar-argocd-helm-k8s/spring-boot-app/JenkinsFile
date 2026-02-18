@@ -50,9 +50,10 @@ pipeline {
           GIT_USER_NAME = "Durvesh123"
       }
       steps {
-          sh 'pwd && ls -la'
+          
           withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
               sh '''
+                  pwd && ls -la
                   git config user.email "durveshnarwelkar@gmail.com"
                   git config user.name "Durvesh Narwelkar"
 
